@@ -24,6 +24,9 @@ from zope.interface import alsoProvides
 import logging
 
 
+import six
+
+
 LOGGER = logging.getLogger('collective.dexteritytextindexer')
 
 
@@ -86,7 +89,7 @@ def dynamic_searchable_text_indexer(obj):
                 continue
 
             # be sure that it is utf-8 encoded
-            if isinstance(value, unicode):
+            if isinstance(value, six.text_type):
                 value = value.encode('utf-8')
 
             # only accept strings
@@ -107,7 +110,7 @@ def dynamic_searchable_text_indexer(obj):
             continue
 
         # be sure that it is utf-8 encoded
-        if isinstance(extended_value, unicode):
+        if isinstance(extended_value, six.text_type):
             extended_value = extended_value.encode('utf-8')
 
         # only accept strings

@@ -12,9 +12,11 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from StringIO import StringIO
 
 import logging
+
+
+from six import StringIO
 
 
 class TextIndexerLayer(PloneSandboxLayer):
